@@ -31,12 +31,12 @@ Content-Type: application/json
 
 **Example request body:**
 ```json
-[
+
   {
     "language": "beanshell",
     "script": "<Java code here>"
   }
-]
+
 ```
 
 ---
@@ -62,12 +62,12 @@ Generic structure of API response:
 
 ### 4.1 Return Type: String (`""`)
 ```json
-[
+
   {
     "language": "beanshell",
     "script": "return \"Hello from BeanShell!\";"
   }
-]
+
 ```
 **Expected Output:**
 ```json
@@ -78,12 +78,12 @@ Generic structure of API response:
 
 ### 4.2 Return Type: List (`[]`)
 ```json
-[
+
   {
     "language": "beanshell",
     "script": "import java.util.*; return Arrays.asList(\"apple\", \"banana\", \"cherry\");"
   }
-]
+
 ```
 **Expected Output:**
 ```json
@@ -94,12 +94,12 @@ Generic structure of API response:
 
 ### 4.3 Return Type: Map (`{}`)
 ```json
-[
+
   {
     "language": "beanshell",
     "script": "import java.util.*; Map<String,Object> map=new LinkedHashMap<>(); map.put(\"key\",\"value\"); map.put(\"status\",\"ok\"); return map;"
   }
-]
+
 ```
 **Expected Output:**
 ```json
@@ -113,12 +113,12 @@ Generic structure of API response:
 
 ### 4.4 Printed Output Only
 ```json
-[
+
   {
     "language": "beanshell",
     "script": "System.out.println(\"Hello World\"); System.out.println(\"Generated Password: 12345\");"
   }
-]
+
 ```
 **Expected Output:**
 ```json
@@ -131,12 +131,12 @@ Generic structure of API response:
 
 ### 4.5 Mixed Return and Print
 ```json
-[
+
   {
     "language": "beanshell",
     "script": "System.out.println(\"This will not be included\"); return \"Final Result\";"
   }
-]
+
 ```
 **Expected Output:**
 ```json
@@ -149,12 +149,12 @@ Generic structure of API response:
 
 If the script contains syntax or runtime errors:
 ```json
-[
+
   {
     "language": "beanshell",
     "script": "int x = \"wrong\";"
   }
-]
+
 ```
 **Expected Output:**
 ```json
@@ -257,12 +257,12 @@ return content.toString();
 
 ## 4. Error Handling
 ```json
-[
+
   {
     "language": "beanshell",
     "script": "int x = \"wrong\";"
   }
-]
+
 ```
 **Expected Output:**
 ```json
