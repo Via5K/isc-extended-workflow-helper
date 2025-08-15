@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "539b73f0-e0e3-4046-9a9a-cb8fbc695b27",
+		"name": "com.isc.extended.workflow.helper",
+		"description": "This is a extended API that supports Beanshell code execution via the API call.\n\nFrist version: 07/21/2025\n\nNext Update: 08/15/25\n\nUrl: https://StartFragmentendearing-miracle-production-7fb9.up.railway.appEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27064765"
+	},
+	"item": [
+		{
+			"name": "Test Java Code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"language\": \"beanshell\",\r\n    \"code\": \"return \\\"Hello World\\\";\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/test/beanshell/run",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"test",
+						"beanshell",
+						"run"
+					]
+				},
+				"description": "Test api call and will be removed in later versions.\n\nFor More information on API Documentation: [https://github.com/Via5K/isc-extended-workflow-helper](https://github.com/Via5K/isc-extended-workflow-helper)"
+			},
+			"response": []
+		},
+		{
+			"name": "Run Java Code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"language\": \"beanshell\",\r\n    \"script\": \"int a = 1; int b = 10; int sum = a + b; return sum;\"\r\n}\r\n// \"script\": \"import java.net.*;\\r\\nimport java.io.*;\\r\\n\\r\\nURL url = new URL(\\\"https://jsonplaceholder.typicode.com/posts/1\\\");\\r\\nHttpURLConnection conn = (HttpURLConnection) url.openConnection();\\r\\nconn.setRequestMethod(\\\"GET\\\");\\r\\n\\r\\nBufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));\\r\\nString inputLine;\\r\\nStringBuffer content = new StringBuffer();\\r\\nwhile ((inputLine = in.readLine()) != null) {\\r\\n    content.append(inputLine);\\r\\n}\\r\\nin.close();\\r\\nconn.disconnect();\\r\\nreturn content;\\r\\n\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/scripts",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"scripts"
+					]
+				},
+				"description": "API call that runs the Beanshell JAVA Code, NOTE: that only OOTB available libraries are available at the moment and no external libraries can be used currently.\n\nFor More information on API Documentation: [https://github.com/Via5K/isc-extended-workflow-helper](https://github.com/Via5K/isc-extended-workflow-helper)"
+			},
+			"response": [
+				{
+					"name": "Run API in Java Code",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n    \"language\": \"beanshell\",\r\n    \"script\": \"\"\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/scripts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"scripts"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Escape Java Code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "int a = {{$.defineVariable.var1}};\r\nint b = {{$.defineVariable.var2}};\r\n\r\nint sum = a + b;\r\nint result = sum - 1;\r\n\r\nreturn \"Sum: \" + sum + \", After subtracting 1: \" + result;\r\n",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/escape",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"escape"
+					]
+				},
+				"description": "API call to escape a normal beanshell code written in editor. This is not a compiler escaping but rather just a normal escaping it will not check for any errors. Output of this api can be used in the /api/scripts to send the Escaped JAVA Code to the backend system.\n\nFor More information on API Documentation: [https://github.com/Via5K/isc-extended-workflow-helper](https://github.com/Via5K/isc-extended-workflow-helper)"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://endearing-miracle-production-7fb9.up.railway.app",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
