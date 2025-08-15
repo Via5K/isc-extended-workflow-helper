@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2025-08-15T14:01:10.123Z",
+    "data": "Dynamic result\nHello from API code",
+    "status": 200,
+    "error": null,
+    "language": "beanshell"
+  }
+]

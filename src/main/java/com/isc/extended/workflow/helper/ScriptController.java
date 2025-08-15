@@ -1,0 +1,60 @@
+package com.isc.extended.workflow.helper;
+
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/scripts")
+public class ScriptController {
+
+    private final BeanShellRunner beanShellRunner;
+
+    public ScriptController(BeanShellRunner beanShellRunner) {
+        this.beanShellRunner = beanShellRunner;
+    }
+
+    @PostMapping
+    public List<ScriptResponse> executeScripts(@RequestBody List<ScriptRequest> requests) {
+        List<ScriptResponse> responses = new ArrayList<>();
+
+        for (ScriptRequest request : requests) {
+            try {
+                if (!"beanshell".equalsIgnoreCase(request.getLanguage())) {
+                    responses.add(new ScriptResponse(
+                        Instant.now(),
+                        null,
+                        HttpStatus.BAD_REQUEST.value(),
+                        "Unsupported language: " + request.getLanguage(),
+                        request.getLanguage()
+                    ));
+                    continue;
+                }
+
+                Object result = beanShellRunner.runScript(request.getScript());
+                responses.add(new ScriptResponse(
+                    Instant.now(),
+                    result,
+                    HttpStatus.OK.value(),
+                    null,
+                    request.getLanguage()
+                ));
+            } catch (Exception e) {
+                responses.add(new ScriptResponse(
+                    Instant.now(),
+                    null,
+                    HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                    e.getMessage(),
+                    request.getLanguage()
+                ));
+            }
+        }
+        return responses;
+    }
+}
