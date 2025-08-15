@@ -1,8 +1,6 @@
 package com.isc.extended.workflow.helper;
 
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,40 +19,71 @@ public class ScriptController {
     }
 
     @PostMapping
-    public List<ScriptResponse> executeScripts(@RequestBody List<ScriptRequest> requests) {
-        List<ScriptResponse> responses = new ArrayList<>();
+    // public List<ScriptResponse> executeScripts(@RequestBody List<ScriptRequest> requests) {
+    //     List<ScriptResponse> responses = new ArrayList<>();
 
-        for (ScriptRequest request : requests) {
-            try {
-                if (!"beanshell".equalsIgnoreCase(request.getLanguage())) {
-                    responses.add(new ScriptResponse(
-                        Instant.now(),
-                        null,
-                        HttpStatus.BAD_REQUEST.value(),
-                        "Unsupported language: " + request.getLanguage(),
-                        request.getLanguage()
-                    ));
-                    continue;
-                }
+    //     for (ScriptRequest request : requests) {
+    //         try {
+    //             if (!"beanshell".equalsIgnoreCase(request.getLanguage())) {
+    //                 responses.add(new ScriptResponse(
+    //                     Instant.now(),
+    //                     null,
+    //                     HttpStatus.BAD_REQUEST.value(),
+    //                     "Unsupported language: " + request.getLanguage(),
+    //                     request.getLanguage()
+    //                 ));
+    //                 continue;
+    //             }
 
-                Object result = beanShellRunner.runScript(request.getScript());
-                responses.add(new ScriptResponse(
-                    Instant.now(),
-                    result,
-                    HttpStatus.OK.value(),
-                    null,
-                    request.getLanguage()
-                ));
-            } catch (Exception e) {
-                responses.add(new ScriptResponse(
-                    Instant.now(),
-                    null,
-                    HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                    e.getMessage(),
-                    request.getLanguage()
-                ));
-            }
+    //             Object result = beanShellRunner.runScript(request.getScript());
+    //             responses.add(new ScriptResponse(
+    //                 Instant.now(),
+    //                 result,
+    //                 HttpStatus.OK.value(),
+    //                 null,
+    //                 request.getLanguage()
+    //             ));
+    //         } catch (Exception e) {
+    //             responses.add(new ScriptResponse(
+    //                 Instant.now(),
+    //                 null,
+    //                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
+    //                 e.getMessage(),
+    //                 request.getLanguage()
+    //             ));
+    //         }
+    //     }
+    //     return responses;
+    // }
+public ScriptResponse executeScripts(@RequestBody ScriptRequest request) {
+    try {
+        if (!"beanshell".equalsIgnoreCase(request.getLanguage())) {
+            return new ScriptResponse(
+                Instant.now(),
+                null,
+                HttpStatus.BAD_REQUEST.value(),
+                "Unsupported language: " + request.getLanguage(),
+                request.getLanguage()
+            );
         }
-        return responses;
+
+        Object result = beanShellRunner.runScript(request.getScript());
+        return new ScriptResponse(
+            Instant.now(),
+            result,
+            HttpStatus.OK.value(),
+            null,
+            request.getLanguage()
+        );
+    } catch (Exception e) {
+        return new ScriptResponse(
+            Instant.now(),
+            null,
+            HttpStatus.INTERNAL_SERVER_ERROR.value(),
+            e.getMessage(),
+            request.getLanguage()
+        );
     }
+}
+
 }
