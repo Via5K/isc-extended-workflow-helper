@@ -19,71 +19,35 @@ public class ScriptController {
     }
 
     @PostMapping
-    // public List<ScriptResponse> executeScripts(@RequestBody List<ScriptRequest> requests) {
-    //     List<ScriptResponse> responses = new ArrayList<>();
+    public ScriptResponse executeScripts(@RequestBody ScriptRequest request) {
+        try {
+            if (!"beanshell".equalsIgnoreCase(request.getLanguage())) {
+                return new ScriptResponse(
+                        Instant.now(),
+                        null,
+                        HttpStatus.BAD_REQUEST.value(),
+                        "Unsupported language: " + request.getLanguage(),
+                        request.getLanguage()
+                );
+            }
 
-    //     for (ScriptRequest request : requests) {
-    //         try {
-    //             if (!"beanshell".equalsIgnoreCase(request.getLanguage())) {
-    //                 responses.add(new ScriptResponse(
-    //                     Instant.now(),
-    //                     null,
-    //                     HttpStatus.BAD_REQUEST.value(),
-    //                     "Unsupported language: " + request.getLanguage(),
-    //                     request.getLanguage()
-    //                 ));
-    //                 continue;
-    //             }
-
-    //             Object result = beanShellRunner.runScript(request.getScript());
-    //             responses.add(new ScriptResponse(
-    //                 Instant.now(),
-    //                 result,
-    //                 HttpStatus.OK.value(),
-    //                 null,
-    //                 request.getLanguage()
-    //             ));
-    //         } catch (Exception e) {
-    //             responses.add(new ScriptResponse(
-    //                 Instant.now(),
-    //                 null,
-    //                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
-    //                 e.getMessage(),
-    //                 request.getLanguage()
-    //             ));
-    //         }
-    //     }
-    //     return responses;
-    // }
-public ScriptResponse executeScripts(@RequestBody ScriptRequest request) {
-    try {
-        if (!"beanshell".equalsIgnoreCase(request.getLanguage())) {
+            Object result = beanShellRunner.runScript(request.getScript());
             return new ScriptResponse(
-                Instant.now(),
-                null,
-                HttpStatus.BAD_REQUEST.value(),
-                "Unsupported language: " + request.getLanguage(),
-                request.getLanguage()
+                    Instant.now(),
+                    result,
+                    HttpStatus.OK.value(),
+                    null,
+                    request.getLanguage()
+            );
+        } catch (Exception e) {
+            return new ScriptResponse(
+                    Instant.now(),
+                    null,
+                    HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                    e.getMessage(),
+                    request.getLanguage()
             );
         }
-
-        Object result = beanShellRunner.runScript(request.getScript());
-        return new ScriptResponse(
-            Instant.now(),
-            result,
-            HttpStatus.OK.value(),
-            null,
-            request.getLanguage()
-        );
-    } catch (Exception e) {
-        return new ScriptResponse(
-            Instant.now(),
-            null,
-            HttpStatus.INTERNAL_SERVER_ERROR.value(),
-            e.getMessage(),
-            request.getLanguage()
-        );
     }
-}
 
 }

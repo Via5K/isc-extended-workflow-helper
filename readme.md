@@ -45,7 +45,7 @@ Content-Type: application/json
 
 Generic structure of API response:
 ```json
-[
+
   {
     "timestamp": "YYYY-MM-DDTHH:MM:SS.sssZ",
     "data": <Returned data>,
@@ -53,7 +53,7 @@ Generic structure of API response:
     "error": null,
     "language": "beanshell"
   }
-]
+
 ```
 
 ---
@@ -197,12 +197,12 @@ return content.toString();
 
 ## 3. Response Format
 ```json
-[
+
   {
     "escaped": "<escaped Java Code>",
     "length": <int length>
   }
-]
+
 ```
 
 ## 4. Return Types
@@ -244,7 +244,7 @@ return content.toString();
 
 ## 3. Response Format
 ```json
-[
+
   {
     "timestamp": "YYYY-MM-DDTHH:MM:SS.sssZ",
     "data": <Returned data>,
@@ -252,7 +252,7 @@ return content.toString();
     "error": null,
     "language": "beanshell"
   }
-]
+
 ```
 
 ## 4. Error Handling
