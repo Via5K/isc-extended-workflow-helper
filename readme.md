@@ -13,8 +13,9 @@ The API supports returning different data formats such as `List` (`[]`), `Map/Ob
    - [4. Return Types](#4-return-types)
    - [5. Error Handling](#5-error-handling)
 2. [ESCAPE API Documentation](#escape-api-documentation)
-3. [Calling APIs Inside Java Code](#calling-apis-inside-java-code)
-4. [Setting Up Locally](#setting-up-locally)
+3. [Upload JAR API Documentation](#upload-jar-api-Documentation)
+4. [Calling APIs Inside Java Code](#calling-apis-inside-java-code)
+5. [Setting Up Locally](#setting-up-locally)
 
 ---
 
