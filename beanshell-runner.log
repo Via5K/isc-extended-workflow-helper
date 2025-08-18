@@ -1,24 +1,89 @@
-2025-08-15T14:51:03.265+05:30  INFO 20332 --- [main] c.i.e.w.h.BeanShellRunnerApplication     : Starting BeanShellRunnerApplication using Java 17.0.16 with PID 20332 (D:\isc-extended-workflow-helper\beanshell-runner\target\beanshell-runner-1.0.0.jar started by user in D:\isc-extended-workflow-helper\beanshell-runner)
-2025-08-15T14:51:03.272+05:30  INFO 20332 --- [main] c.i.e.w.h.BeanShellRunnerApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-08-15T14:51:04.733+05:30  INFO 20332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-08-15T14:51:04.747+05:30  INFO 20332 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-08-15T14:51:04.757+05:30  INFO 20332 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2025-08-15T14:51:04.811+05:30  INFO 20332 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-08-15T14:51:04.811+05:30  INFO 20332 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1418 ms
-2025-08-15T14:51:05.297+05:30  INFO 20332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-08-15T14:51:05.319+05:30  INFO 20332 --- [main] c.i.e.w.h.BeanShellRunnerApplication     : Started BeanShellRunnerApplication in 2.89 seconds (process running for 3.539)
-2025-08-15T14:51:06.874+05:30  INFO 20332 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-08-15T14:51:06.874+05:30  INFO 20332 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-08-15T14:51:06.880+05:30  INFO 20332 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-08-15T14:54:07.721+05:30  INFO 15508 --- [main] c.i.e.w.h.BeanShellRunnerApplication     : Starting BeanShellRunnerApplication using Java 17.0.16 with PID 15508 (D:\isc-extended-workflow-helper\beanshell-runner\target\classes started by user in D:\isc-extended-workflow-helper\beanshell-runner)
-2025-08-15T14:54:07.724+05:30  INFO 15508 --- [main] c.i.e.w.h.BeanShellRunnerApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-08-15T14:54:08.651+05:30  INFO 15508 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-08-15T14:54:08.668+05:30  INFO 15508 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-08-15T14:54:08.668+05:30  INFO 15508 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2025-08-15T14:54:08.737+05:30  INFO 15508 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-08-15T14:54:08.737+05:30  INFO 15508 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 964 ms
-2025-08-15T14:54:09.101+05:30  INFO 15508 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-08-15T14:54:09.112+05:30  INFO 15508 --- [main] c.i.e.w.h.BeanShellRunnerApplication     : Started BeanShellRunnerApplication in 1.856 seconds (process running for 2.211)
-2025-08-15T14:54:11.930+05:30  INFO 15508 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-08-15T14:54:11.930+05:30  INFO 15508 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-08-15T14:54:11.930+05:30  INFO 15508 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-08-18T18:10:17.574+05:30  INFO 22412 --- [main] c.i.e.w.h.BeanShellRunnerApplication     : Starting BeanShellRunnerApplication using Java 17.0.16 with PID 22412 (D:\isc-extended-workflow-helper\beanshell-runner\target\classes started by user in D:\isc-extended-workflow-helper\beanshell-runner)
+2025-08-18T18:10:17.580+05:30  INFO 22412 --- [main] c.i.e.w.h.BeanShellRunnerApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-08-18T18:10:18.218+05:30  INFO 22412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-18T18:10:18.229+05:30  INFO 22412 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-18T18:10:18.231+05:30  INFO 22412 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-18T18:10:18.277+05:30  INFO 22412 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-18T18:10:18.278+05:30  INFO 22412 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 662 ms
+2025-08-18T18:10:18.515+05:30  INFO 22412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-18T18:10:18.522+05:30  INFO 22412 --- [main] c.i.e.w.h.BeanShellRunnerApplication     : Started BeanShellRunnerApplication in 1.253 seconds (process running for 1.489)
+2025-08-18T18:10:52.831+05:30  INFO 22412 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-18T18:10:52.831+05:30  INFO 22412 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-18T18:10:52.831+05:30  INFO 22412 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-08-18T18:10:52.874+05:30 ERROR 22412 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+java.io.IOException: java.io.FileNotFoundException: C:\Users\user\AppData\Local\Temp\tomcat.8080.15069562342776890076\work\Tomcat\localhost\ROOT\uploaded-jars\com.google.gson_2.10.1.jar (The system cannot find the path specified)
+	at org.apache.catalina.core.ApplicationPart.write(ApplicationPart.java:119) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile.transferTo(StandardMultipartHttpServletRequest.java:265) ~[spring-web-6.1.11.jar:6.1.11]
+	at com.isc.extended.workflow.helper.ScriptUploadJarController.uploadJar(ScriptUploadJarController.java:54) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: java.io.FileNotFoundException: C:\Users\user\AppData\Local\Temp\tomcat.8080.15069562342776890076\work\Tomcat\localhost\ROOT\uploaded-jars\com.google.gson_2.10.1.jar (The system cannot find the path specified)
+	at java.base/java.io.FileOutputStream.open0(Native Method) ~[na:na]
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:293) ~[na:na]
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:235) ~[na:na]
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:184) ~[na:na]
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.write(DiskFileItem.java:405) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationPart.write(ApplicationPart.java:117) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	... 52 common frames omitted
+
+2025-08-18T18:19:34.791+05:30  INFO 21700 --- [main] c.i.e.w.h.BeanShellRunnerApplication     : Starting BeanShellRunnerApplication using Java 17.0.16 with PID 21700 (D:\isc-extended-workflow-helper\beanshell-runner\target\classes started by user in D:\isc-extended-workflow-helper\beanshell-runner)
+2025-08-18T18:19:34.794+05:30  INFO 21700 --- [main] c.i.e.w.h.BeanShellRunnerApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-08-18T18:19:35.380+05:30  INFO 21700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-18T18:19:35.388+05:30  INFO 21700 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-18T18:19:35.388+05:30  INFO 21700 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-18T18:19:35.424+05:30  INFO 21700 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-18T18:19:35.424+05:30  INFO 21700 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 596 ms
+2025-08-18T18:19:35.642+05:30  INFO 21700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-18T18:19:35.650+05:30  INFO 21700 --- [main] c.i.e.w.h.BeanShellRunnerApplication     : Started BeanShellRunnerApplication in 1.136 seconds (process running for 1.356)
+2025-08-18T18:19:40.366+05:30  INFO 21700 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-18T18:19:40.366+05:30  INFO 21700 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-18T18:19:40.368+05:30  INFO 21700 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

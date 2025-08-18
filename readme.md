@@ -212,6 +212,165 @@ Same as BeanShell API.
 No error handling — pure escaping.
 
 ---
+# Upload JAR API Documentation
+
+## 1. API Endpoint
+
+```http
+POST /api/upload-jar
+Content-Type: multipart/form-data
+```
+
+---
+
+## 2. Request Format
+
+Send a JAR file using `multipart/form-data`.
+
+**Example using Postman:**  
+- Set **Method** = `POST`  
+- Set **URL** = `http://localhost:8080/api/upload-jar`  
+- In the **Body** tab:  
+  - Select **form-data**  
+  - Add a key `file` (type = *File*)  
+  - Choose a `.jar` file from your system and send the request.
+
+**cURL Example:**
+```bash
+curl -X POST "http://localhost:8080/api/upload-jar"   -H "Content-Type: multipart/form-data"   -F "file=@com.google.gson_2.10.1.jar"
+```
+
+---
+
+## 3. Response Format
+
+Generic structure of API response:
+```json
+{
+  "status": "<uploaded|already_exists|error>",
+  "path": "Absolute file path where the JAR was stored",
+  "timestamp": "YYYY-MM-DDTHH:MM:SS.sssZ",
+  "error": null
+}
+```
+
+Example of API response:
+```json
+{
+  "status": "uploaded",
+  "path": "D:\\project\\uploaded-jars\\example.jar",
+  "timestamp": "2025-08-18T12:34:56Z"
+}
+```
+
+---
+
+## 4. Response Scenarios
+
+### 4.1 Successful Upload
+```json
+{
+  "status": "uploaded",
+  "path": "D:\\isc-extended-workflow-helper\\uploaded-jars\\com.google.gson_2.10.1.jar",
+  "timestamp": "2025-08-18T12:34:56Z"
+}
+```
+
+### 4.2 JAR Already Exists
+```json
+{
+  "status": "already_exists",
+  "path": "D:\\isc-extended-workflow-helper\\uploaded-jars\\com.google.gson_2.10.1.jar",
+  "timestamp": "2025-08-17T14:22:31Z"
+}
+```
+
+### 4.3 Invalid File Type
+```json
+{
+  "error": "Only .jar files are allowed"
+}
+```
+
+### 4.4 Empty File Upload
+```json
+{
+  "error": "File is empty"
+}
+```
+
+---
+
+## 5. Error Handling
+
+If the server encounters an unexpected issue (e.g., file write issue, disk permission errors, invalid directory), response format:
+
+```json
+{
+  "status": 500,
+  "error": "Internal server error message"
+}
+```
+
+
+
+## 6. Example Usage in BeanShell Scripts
+
+Once a JAR is uploaded, it can be dynamically loaded in BeanShell scripts using:
+
+```java
+addClassPath("D:\\isc-extended-workflow-helper\\beanshell-runner\\uploaded-jars\\com.google.gson_2.10.1.jar"); //add the path that was returned by Upload JAR API
+//add another JAR Location
+//add another JAR Location
+
+import com.google.gson.Gson; //Normal, library import statements for the jar that was uploaded
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
+
+gson = new Gson();
+
+// Create array [ "foo", "bar" ]
+JsonArray arr = new JsonArray();
+arr.add(new JsonPrimitive("foo"));
+arr.add(new JsonPrimitive("bar"));
+
+// Create object { "foo":true, "bar":true, "foo-bar":false }
+JsonObject orgs = new JsonObject();
+orgs.add("foo", new JsonPrimitive(true));
+orgs.add("bar", new JsonPrimitive(true));
+orgs.add("foo-bar", new JsonPrimitive(false));
+
+// Wrap into parent object
+JsonObject root = new JsonObject();
+root.add("array", arr);
+root.add("orgs", orgs);
+
+// Return as Map so Spring serializes it as JSON object
+return gson.fromJson(root, java.util.Map.class);
+```
+
+**Expected Output:**
+```json
+{
+    "timestamp": "2025-08-18T13:15:29.938366600Z",
+    "data": {
+        "array": [
+            "foo",
+            "bar"
+        ],
+        "orgs": {
+            "foo": true,
+            "bar": true,
+            "foo-bar": false
+        }
+    },
+    "status": 200,
+    "error": null,
+    "language": "beanshell"
+}
+```
+
 
 # Calling APIs Inside Java Code
 
