@@ -461,3 +461,16 @@ Endpoints:
 - `/api/scripts`
 - `/api/escape`
 - `/test/beanshell/run` (testing only, will be removed)
+
+## License
+This project is licensed under the GNU AGPLv3 License - see the [LICENSE](LICENSE) file for details.
+
+## Credits
+Created and maintained by [Neeraj](https://github.com/via5k).
+
+## Support
+If you find this project useful, please consider supporting development:
+Future developments
+- Signature Jar Validation during uploads
+- Powershell Integration
+- JWT Authentication (proposed but highly unlikely to implement due to hosting in client env.)
